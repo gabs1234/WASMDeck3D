@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gabriel Lefloch">
+  <meta name="dcterms.date" content="2025-04-09">
+  <title>An introduction the forward process</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/tldreveal/dist/bundle/index.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.3/full/pyodide.js"></script>
+</head>
+<body>
+<!-- <script src="https://unpkg.com/tldreveal/dist/bundle/index.js"></script>
+<!-- <script>
+    // Initialize Reveal.js with the Tldreveal plugin
+    Reveal.initialize({
+        // tldreveal does not support scroll view
+        scrollActivationWidth: undefined,
+        plugins: [  ]
+    })
+</script> --> -->
+
+<script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.163.0/build/three.module.js"
+        }
+    }
+</script>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">An introduction the forward process</h1>
+  <p class="author">Gabriel Lefloch</p>
+  <p class="date">9 April 2025</p>
+</section>
+
+<section>
+<section id="scientific-context" class="title-slide slide level1">
+<h1>Scientific context</h1>
+
+</section>
+<section id="motivation" class="title-slide slide level2">
+<h2>Motivation</h2>
+<figure>
+<img data-src="./images/ips.png"
+alt="Institute for Photon Science and Synchrotron Radiation" />
+<figcaption aria-hidden="true">Institute for Photon Science and
+Synchrotron Radiation</figcaption>
+</figure>
+</section>
+</section>
+<section>
+<section id="the-beginnings" class="title-slide slide level1">
+<h1>The beginnings</h1>
+
+</section>
+<section id="electrostatics" class="title-slide slide level2">
+<h2>Electrostatics</h2>
+
+</section>
+<section class="slide level3">
+
+<div class="theorem">
+<p><strong>Coloumb’s law</strong> showed experimentally that <span
+class="math display">\[
+\vec{F} =  \frac{k q_1 q_2}{|x_1 - x_2|^3} (\vec{x_1} - \vec{x_2})
+\]</span> TODO: add notes</p>
+</div>
+</section>
+<section class="slide level3">
+
+<p>Experimentally, superposition has been shown to be valid for electric
+fields. <span class="math display">\[
+E (\vec{x}) = \frac{1}{4 \pi \epsilon_0} \int_V \rho (\vec{x})
+\frac{\vec{x} - \vec{x&#39;}}{|\vec{x} - \vec{x&#39;}|^3} d\vec{x&#39;}
+\]</span> with <span class="math inline">\(\rho(\vec{x}) = \sum q_i
+\delta (\vec{x} - \vec{x_i})\)</span>.</p>
+</section>
+<section class="slide level3">
+
+<div id="interactive">
+
+</div>
+<script type="module" src="js/test.js"></script>
+</section>
+<section class="slide level3">
+
+<div class="theorem">
+<p><strong>Gauss’s law</strong> is derived from the assuption that the
+emanating field of a charge is spherical. <span class="math display">\[
+\oint_V \vec{E} \cdot \vec{n} \mathrm{d}a = \frac{q_1}{\epsilon_0}
+\]</span> TODO: add notes</p>
+</div>
+</section>
+<section class="slide level3">
+
+<p>By applying the <span class="keyword">Divergen theorem</span> to
+Gauss’s law, we can show that <span class="math display">\[
+\vec{\nabla} \cdot \vec{E}(\vec{x}) = \frac{\rho(\vec{x})}{\epsilon_0}
+\]</span> TODO: add name</p>
+</section>
+
+<section id="magnetostatics" class="title-slide slide level2">
+<h2>Magnetostatics</h2>
+<p>TODO</p>
+</section>
+
+<section id="from-micro-to-macro" class="title-slide slide level2">
+<h2>From micro to macro</h2>
+<p>TODO : tedious, but interesting</p>
+</section>
+
+<section id="wrap-up" class="title-slide slide level2">
+<h2>Wrap-up</h2>
+<p>TODO : wrap up of maxwell’s static equations</p>
+</section>
+</section>
+<section>
+<section id="from-static-to-dynamic" class="title-slide slide level1">
+<h1>From static to dynamic</h1>
+<p>TODO : add nice dynamic plot</p>
+</section>
+<section id="maxwells-equations" class="title-slide slide level2">
+<h2>Maxwell’s equations</h2>
+
+</section>
+<section class="slide level3">
+
+<p><span class="math display">\[
+\begin{cases}
+\nabla \cdot \vec{D} = \rho \\
+\nabla \cdot \vec{B} = 0 \\
+\nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t} \\
+\nabla \times \vec{H} = \vec{J} + \frac{\partial \vec{D}}{\partial t}
+\end{cases}
+\]</span></p>
+</section>
+<section class="slide level3">
+
+<p>Simplification : No current density <span
+class="math inline">\(\vec{J} = 0\)</span></p>
+<p>Simplification : linear, homogeneous materials =&gt; <span
+class="math inline">\(\vec{D} = \epsilon \vec{E}\)</span> and <span
+class="math inline">\(\vec{H} = \frac{1}{\mu} \vec{B}\)</span></p>
+<p>Simplification : material is vaccum ~ air =&gt; <span
+class="math inline">\(\epsilon = \epsilon_0\)</span> and <span
+class="math inline">\(\mu = \mu_0\)</span></p>
+</section>
+</section>
+<section>
+<section id="the-wave-equation" class="title-slide slide level1">
+<h1>The wave equation</h1>
+
+</section>
+<section id="algebraic-derivation" class="title-slide slide level2">
+<h2>Algebraic derivation</h2>
+<p>TODO : derive the 3d wave equation algebraically, no electromagnetic
+field required</p>
+</section>
+
+<section id="wait-electromagnetic-radiation-is-a-wave"
+class="title-slide slide level2">
+<h2>Wait, electromagnetic radiation is a wave?</h2>
+
+</section>
+</section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/search/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom,
+          // Tldreveal.Tldreveal()
+        ],
+        // tldreveal: {
+        //             /// Configure the default drawing styles for tldraw, used when the editor is
+        //   /// first started.
+        //   // defaultStyles: {
+        //   //     color?: TLDefaultColorStyle
+        //   //     size?: TLDefaultSizeStyle
+        //   //     dash?: TLDefaultDashStyle
+        //   //     fill?: TLDefaultFillStyle
+        //   //     font?: TLDefaultFontStyle
+        //   //     horizontalAlign?: TLDefaultHorizontalAlignStyle
+        //   //     verticalAlign?: TLDefaultVerticalAlignStyle
+        //   // }
+
+        //   // /// Show a warning when the `disableLayout` option is enabled. Set to
+        //   // /// `false` to silence the warning when you have provided your own style
+        //   // /// overrides. Defaults to `true`. 
+        //   // disableLayoutWarning: boolean
+
+        //   // /// Whether the tldraw UI is rendered in dark mode by default. Set to
+        //   // /// `false` if you use a light theme for Reveal.js, defaults to `true`.
+        //   // isDarkMode: boolean
+        //   /// Allow automatic switching between dark and light mode for slides with a
+        //   /// custom data-background attribute. Defaults to `true`.
+        //   automaticDarkMode: true,
+
+        //   /// Use localStorage to store drawing state in the browser. Requires an `id`
+        //   /// or `data-tlid` attribute on the .reveal or .slides element to determine
+        //   /// the identity of the slide deck. Defaults to `true`, if that id is found.
+        //   useLocalStorage: true,
+        //   /// Load drawing state from a URL. Set to `false` to disable this option,
+        //   /// set to `"auto"` to automatically determine the URL from the deck URL or
+        //   /// set to `{ url: "/path/to/saved.tldrev" }` to supply a custom location.
+        //   /// The automatic mode replaces `.html` or `.html` in the slide path with
+        //   /// `.tldrev` if the path ends with one of those extensions. Else it appends
+        //   /// `/index.tldrev`.
+        //   // snapshotUrl: {
+        //   //   url:'notes/notes.tldrev'
+        //   //  },
+        // }
+      });
+    </script>
+    <!-- <script>
+    Reveal.on('ready', function() {
+        Tldreveal.loadFromUrl('notes/notes.tldrev');
+      });
+    </script> -->
+    </body>
+</html>
